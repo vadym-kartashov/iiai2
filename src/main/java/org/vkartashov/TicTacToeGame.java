@@ -1,4 +1,4 @@
-package org.vkartashov.minimax;
+package org.vkartashov;
 
 import org.apache.commons.lang3.SerializationUtils;
 
@@ -7,15 +7,11 @@ import java.util.Objects;
 
 public class TicTacToeGame implements Serializable {
 
-    private TicTacToeActor[][] board;
-    private TicTacToeActor currentPlayer;
+    private final TicTacToeActor[][] board;
+    private TicTacToeActor currentPlayer = TicTacToeActor.PLAYER_X;
 
-    private int winCondition;
-
-    public TicTacToeGame(int boardSize, int winCondition, TicTacToeActor startingPlayer) {
-        this.board = new TicTacToeActor[boardSize][boardSize];
-        this.winCondition = winCondition;
-        this.currentPlayer = startingPlayer;
+    public TicTacToeGame() {
+        this.board = new TicTacToeActor[3][3];
     }
 
     public TicTacToeActor[][] getBoard() {
@@ -62,10 +58,6 @@ public class TicTacToeGame implements Serializable {
         return null;
     }
 
-
-    private boolean checkRowCol(TicTacToeActor c1, TicTacToeActor c2, TicTacToeActor c3) {
-        return Objects.equals(c1, c2) && Objects.equals(c2, c3) && !Objects.equals(c1, null);
-    }
 
     public boolean isTerminal() {
         for (TicTacToeActor[] ticTacToeActors : board) {

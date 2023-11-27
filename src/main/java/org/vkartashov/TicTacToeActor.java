@@ -1,4 +1,4 @@
-package org.vkartashov.minimax;
+package org.vkartashov;
 
 public enum TicTacToeActor {
 
@@ -14,4 +14,5 @@ public enum TicTacToeActor {
     public String getDisplayValue() {
         return displayValue;
     }
+
 }
