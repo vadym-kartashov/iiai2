@@ -1,6 +1,8 @@
 # Intorduction into artificial intelligence HW1 (lecture 2)
 
 Implement Tic Tac Toe game with Minimax algorithm
+Algorithm has been modified slightly so that further moves receive less score
+to avoid a situation that loss on next turn has better score
 
 ## Implementation
 ![Example screnshowt](./img/example.png)
